@@ -19,13 +19,5 @@ public class InputController : MonoSingleton<InputController>
     {
         return rotationJoystick.Horizontal;
     }
-
-    private void FixedUpdate()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            GameManager.Instance.OpenParachute();
-        }
-    }
     
 }

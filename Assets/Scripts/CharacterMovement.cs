@@ -30,7 +30,6 @@ public class CharacterMovement : MonoSingleton<CharacterMovement>
             _direction.x /= difficultyOfControl;
             _direction.z /= difficultyOfControl;
         }
-        Debug.Log(_direction);
         _rigidbody.velocity = _direction;
     }
 }

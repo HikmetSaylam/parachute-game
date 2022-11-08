@@ -1,5 +1,7 @@
 using GeneralScripts;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -22,4 +24,17 @@ public class GameManager : MonoSingleton<GameManager>
         mainCamera.SetActive(false);
         parachute.SetActive(true);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
+    
 }
