@@ -5,6 +5,7 @@ public class InputController : MonoSingleton<InputController>
 {
     [SerializeField] private Joystick controlJoystick;
     [SerializeField] private Joystick rotationJoystick;
+    
     public float GetHorizontal()
     {
         return controlJoystick.Horizontal;

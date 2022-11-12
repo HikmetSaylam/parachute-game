@@ -23,6 +23,8 @@ public class CharacterMovement : MonoSingleton<CharacterMovement>
         {
             _direction.x += InputController.Instance.GetRotationHorizontal() * 2;
         }
+
+        _direction.z += 0.23f;
         _direction.x *= speed;
         _direction.z *= speed;
         if (CharacterPhysic.Instance.GetIsParachuteOpen())

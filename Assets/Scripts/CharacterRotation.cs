@@ -10,7 +10,7 @@ public class CharacterRotation : MonoSingleton<CharacterRotation>
     private float _middleValue;
     private Quaternion _tmpRotation;
     private Transform _transform;
-    private float turnSmoothVelocity;
+    private float _turnSmoothVelocity;
 
     private void Start()
     {
@@ -25,8 +25,7 @@ public class CharacterRotation : MonoSingleton<CharacterRotation>
         _tmpRotation.x = Mathf.Lerp(startRotationX, endRotationX,
             InputController.Instance.GetVertical() * disposition + _middleValue);
         _tmpRotation.y = Mathf.SmoothDampAngle(_tmpRotation.y, InputController.Instance.GetRotationHorizontal() / 2,
-            ref turnSmoothVelocity, turnSmoothTime); 
-            /*InputController.Instance.GetRotationHorizontal()/2;*/
+            ref _turnSmoothVelocity, turnSmoothTime);
         _tmpRotation.z = -Mathf.Lerp(startRotationZ, endRotationZ,
             InputController.Instance.GetHorizontal()*disposition + _middleValue);
         _transform.rotation = _tmpRotation;
